@@ -1,0 +1,120 @@
+.Home-sect-2{
+    background-color: #f9f9f9;
+    width: 100%;
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: space-around ;
+    flex-wrap: wrap;
+    
+}
+        /* Card of home section code start from here   */
+
+.Home-sect-2 .cardsect2{
+    min-width: 23.5vw;
+    height: 65vh;
+    margin-bottom: 10%;
+    transition: all 1s;
+}
+.Home-sect-2 .cardsect2:hover .bgimg .addcart {
+    display: block;
+    z-index: 10;
+}
+.Home-sect-2 .cardsect2:hover .details p{
+    display: block;
+}
+.Home-sect-2 .cardsect2 .bgimg{
+    height: 80%;
+    position: relative;
+}
+.Home-sect-2 .cardsect2 .bgimg img{
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+.Home-sect-2 .cardsect2 .bgimg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0); 
+    transition: background-color 0.5s ease;
+}
+.Home-sect-2 .cardsect2 .bgimg:hover::after{
+    background-color: rgba(204, 199, 199, 0.5);
+}
+.Home-sect-2 .cardsect2 .bgimg .addcart{
+    background-color: #2D3A4B;
+    border: none;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 15%;
+    cursor: pointer;
+    color: white;
+    cursor: pointer;
+    transition: all 0.8s;
+    display: none;
+}
+.Home-sect-2 .cardsect2 .bgimg .sale{
+    background-color: yellow;
+    border: none;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 7;
+    cursor: pointer;
+    color: black;
+    transition: all 0.8s;
+    cursor: default;
+}
+.Home-sect-2 .cardsect2 .bgimg .addcart:hover{
+    color: black;
+    background-color: white;
+}
+.Home-sect-2 .cardbotmpart{
+    padding-left: 5px;
+    width: 100%;
+}
+.Home-sect-2 .cardbotmpart h3{
+    margin-block: 10px;
+}
+.Home-sect-2 .cardbotmpart .details{
+    padding-right: 0px;
+    padding-top: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+.Home-sect-2 .cardbotmpart .details .prices{
+    width: 45%;
+    position: relative;
+    left: 1%;
+    cursor: default;
+    display: flex;
+}
+.Home-sect-2 .cardbotmpart .details p span{
+    color: black;
+    position: absolute;
+    top: 0;
+    left: 60%;
+    display: block;
+}
+.Home-sect-2 .cardbotmpart .details p{
+    display: none;
+    cursor: pointer;
+}
+.Home-sect-2 .cardbotmpart .details p{
+    color: gray;
+    font-size: 80%;
+}
+
+  /* Card of home section code End there   */
+
+@media only screen and (max-width:500px){
+    .Home-sect-2 .cardsect2{
+        min-width: 80%;
+        /* height: 10%; */
+    }
+}

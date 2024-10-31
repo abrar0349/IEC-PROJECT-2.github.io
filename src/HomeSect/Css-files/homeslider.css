@@ -1,0 +1,17 @@
+.Home-section3{
+    overflow: hidden;
+}
+.Home-section3 .slider{
+    background-color: gray;
+    overflow: scroll;
+    /* text-align: left; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+ .Home-section3 .slider.btns{
+    color: yellow;
+    border: 2px solid blue;
+}
+
+
