@@ -1,0 +1,135 @@
+
+.login-sect-1{
+    background-color: #131920;
+    padding: 150px 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 95vw;
+    margin: auto;
+    margin-bottom: 12%;
+    color: white;
+    word-spacing: 3px;
+    font-size: 25px;
+}
+.login-sect-1 .sect-1-1{
+    width: 45%;
+    /* border: 2px solid; */
+}
+.login-sect-1 .sect-1-1 ul{
+    margin-top: 25px;
+    list-style: none;
+    display: flex;
+    font-size: 17px;
+    /* color: white; */
+}
+.login-sect-1 .sect-1-1 ul a{
+    color: white;
+    margin-left: 20px;
+    transition:1s all;
+}
+.login-sect-1 .sect-1-1 ul a:hover{
+    color: yellow;
+}
+.login-sect-1 .sect-1-2{
+    width: 45%;
+    /* border: 2px solid;   */
+}
+.login-sect-1 .sect-1-2 span{
+   font-size: 15px;  
+   color: gray;
+}
+.login-sect-1 .sect-1-2-1{
+    border: 2px solid black;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+}
+.login-sect-1 .sect-1-2-1 input{
+    width: 70%;
+    height: 50px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    caret-color: white;
+    color: white;
+    /* font-size: 20px; */
+}
+.login-sect-1 .sect-1-2-1 input::placeholder{
+    color: gray;
+}
+.login-sect-1 .sect-1-2-1 button{
+    width: 30%;
+    border: none;
+    background-color: gray;
+    color: white;
+    font-weight: 800;
+    transition: 0.8s all;
+}
+.login-sect-1 .sect-1-2-1 button:hover{
+    background-color: yellow;
+    color: black;
+}
+
+@media (min-width:600px) and (max-width:800px){
+    .login-sect-1{
+        flex-direction: column;
+        font-size: 20px;
+    }
+    .login-sect-1 .sect-1-1{
+        width: 100%;
+    }
+    .login-sect-1 .sect-1-2{
+        margin-top: 20%;
+        width: 100%;
+    }
+    .login-sect-1 .sect-1-2 span{
+        font-size: 13px;  
+        color: gray;
+     }
+    .login-sect-1 .sect-1-2-1{ 
+        flex-direction: row;
+        margin-top: 3%;
+    }
+    .login-sect-1 .sect-1-2-1 input{
+        width: 70%;
+        border: none;
+ 
+    }
+    .login-sect-1 .sect-1-2-1 button{
+        height: 50px;
+    }
+}
+
+@media only screen and (max-width:600px) {
+       .login-sect-1{
+        flex-direction: column;
+        font-size: 15px;
+        margin-bottom: 20%;
+    }
+    .login-sect-1 .sect-1-1{
+        width: 100%;
+    }
+    .login-sect-1 .sect-1-2{
+        margin-top: 20%;
+        width: 100%;
+    }
+    .login-sect-1 .sect-1-2 span{
+        font-size: 10px;  
+        color: gray;
+     }
+    .login-sect-1 .sect-1-2-1{ 
+        flex-direction: column;
+        border: none;
+    }
+    .login-sect-1 .sect-1-2-1 input{
+        width: 100%;
+        border: 2px solid black;
+ 
+    }
+    .login-sect-1 .sect-1-2-1 button{
+        height: 50px;
+        margin-top: 2.5%;
+        width: 50%;
+    }
+   
+}

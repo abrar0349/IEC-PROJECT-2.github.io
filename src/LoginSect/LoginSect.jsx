@@ -1,14 +1,14 @@
 import React from 'react';
 import './loginsec.css'
 import LoginForm from './Component/LoginForm';
-import FormSect from './Component/FormSect';
+import EmailSubSect from '../Component/EmialSubSect';
 
 function LoginSect() {
 
   return (
     <>
       <LoginForm />
-      <FormSect />
+      <EmailSubSect />
     </>
   )
 }

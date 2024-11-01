@@ -8,7 +8,6 @@ function FooterSect() {
   return (
     <div className='footersect'>
 
-
       <div className="footer1">
         <FooterSlider />
       </div>

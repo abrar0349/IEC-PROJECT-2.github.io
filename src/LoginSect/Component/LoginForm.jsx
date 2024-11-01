@@ -29,7 +29,7 @@ function LoginForm() {
     <input type="password" name = 'password' onChange={handleChange}/>
     <div className='btn'>
         <button>LOGIN</button>
-        <a href="*">Forget Password</a>
+        <a href="#" >Forget Password</a>
     </div>
     </form>
 </div>

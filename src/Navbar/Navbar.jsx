@@ -1,53 +1,60 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './navbar.css'
 
 function Navbar() {
+    let [display , setDisplay] = useState('none')
+    let inlineStyle = {display:display}
 
-    let barbtn = useRef()
-    let vertical_nav = useRef()
-    useEffect(() => {
-        let btn =  barbtn.current
-        console.log(btn)
+// let navbarRef = useRef()
+let btnRef = useRef()
 
-        let div = vertical_nav.current
+let handlesNav = () => {
+    if(inlineStyle.display == 'none'){
+        setDisplay('block')
+        console.log('Correct')
+    }else{
+        setDisplay('none')
+        console.log('Wrong')
+    }
+}
 
-        btn.addEventListener('click',() => {
-            let displayStyle = getComputedStyle(div).display; // Get the computed display style
-            console.log(displayStyle === 'none'); 
 
-            if(displayStyle === 'none'){
-                div.style.display = 'flex'
-            }else{
-                div.style.display = 'none'
-            }
+useEffect(() => {
+let btn = btnRef.current;
 
-    
-        })
-    },[])
+btn.addEventListener('click',handlesNav)
+
+return () => {
+    btn.removeEventListener('click',handlesNav,true)
+}
+
+},[display])
+
   return (
-    <div className='navbar'>
-        <div className='horizontal-nav'>
+  <>
+    <div className='horizontal-nav'>
 
             <a href="#" className='nav-img'><img src="https://demos.webicode.com/html/Bo-shop-html/images/logo-foot.png" alt="logo" /></a>
-            <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Product Details</a></li>
-        <li><a href="#">Card</a></li>
-        <li><a href="#">Check out</a></li>
+            <ul className='nav-list-items'>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Product Details</a></li>
+                <li><a href="#">Card</a></li>
+                <li><a href="#">Check Out</a></li>
             </ul>
-            <i className="fa-solid fa-bars navbar-close-btn" ref={barbtn} ></i>
+            <i className="fa-solid fa-bars navbar-close-btn" ref={btnRef}></i>
             {/* <i class=""></i> */}
 
-        </div>
-        <div className='vertical-nav' ref={vertical_nav}>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Product Details</a></li>
-            <li><a href="#">Card</a></li>
-            <li><a href="#">Check out</a></li>      
-        </ul>
-        </div>
     </div>
+    <div className="vertical-nav" style={inlineStyle} >
+        <ul className='nav-list-items'>
+        <li><a href="#">Home</a></li>
+                <li><a href="#">Product Details</a></li>
+                <li><a href="#">Card</a></li>
+                <li><a href="#">Check Out</a></li>
+        </ul>
+    </div>
+  </>     
+   
   )
 }
 

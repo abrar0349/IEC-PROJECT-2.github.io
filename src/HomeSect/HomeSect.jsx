@@ -3,6 +3,8 @@ import './homesect.css'
 import Homesect1 from './Component/Homesect1';
 import Homesect2 from './Component/Homesect2';
 import Homesect2_1 from './Component/Homesect2_1';
+import EmailSubSect from '../Component/EmialSubSect';
+// import FormSect from '../LoginSect/Component/FormSect';
 // import HomeSlider from './Component/HomeSlider';
 
 function HomeSect() {
@@ -42,7 +44,6 @@ function HomeSect() {
     btn1.addEventListener('click',handle1)
     btn2.addEventListener('click',handle2)
     
-    // console.log(Btn1,Btn2)
   },[])
 
   return (
@@ -65,7 +66,7 @@ function HomeSect() {
         </div>
 
         <div className="Home-section3">
-          {/* <HomeSlider /> */}
+          <EmailSubSect />
         </div>
       
     </div>
