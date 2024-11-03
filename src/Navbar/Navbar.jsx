@@ -3,7 +3,13 @@ import './navbar.css'
 
 function Navbar() {
     let [display , setDisplay] = useState('none')
-    let inlineStyle = {display:display}
+    let inlineStyle = {display:display};
+
+    const [userLog , setUserLog] = useState(false)
+
+    const userLoginFunctionality = () => {
+        setUserLog(true)
+    }
 
 // let navbarRef = useRef()
 let btnRef = useRef()
@@ -37,12 +43,16 @@ return () => {
             <a href="#" className='nav-img'><img src="https://demos.webicode.com/html/Bo-shop-html/images/logo-foot.png" alt="logo" /></a>
             <ul className='nav-list-items'>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Product Details</a></li>
+                {/* <li><a href="#">Product Details</a></li> */}
                 <li><a href="#">Card</a></li>
                 <li><a href="#">Check Out</a></li>
             </ul>
             <i className="fa-solid fa-bars navbar-close-btn" ref={btnRef}></i>
             {/* <i class=""></i> */}
+            <div className="nav-icons">
+              {userLog ?   <a href="#">LogIn</a> : 
+                <a href="#" onClick={userLoginFunctionality}>LogOut</a>}
+            </div>
 
     </div>
     <div className="vertical-nav" style={inlineStyle} >
@@ -51,7 +61,12 @@ return () => {
                 <li><a href="#">Product Details</a></li>
                 <li><a href="#">Card</a></li>
                 <li><a href="#">Check Out</a></li>
+                <div className='nav-icons'>
+                    {userLog ?   <a href="#">LogIn</a> : 
+                    <a href="#" onClick={userLoginFunctionality}>LogOut</a>}
+                 </div>
         </ul>
+
     </div>
   </>     
    

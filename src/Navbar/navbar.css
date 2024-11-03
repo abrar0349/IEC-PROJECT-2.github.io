@@ -14,9 +14,13 @@
 }
 .horizontal-nav{
 /* border: 2px solid yellow; */
+box-shadow: 3px 3px 10px gray;
+position: fixed;
+top: 0;
 width: 100%;
 height: 10vh;
-position: relative;
+background-color: white;
+/* position: relative; */
 z-index: 997;
 /* padding-top: 10px; */
 display: flex;
@@ -65,11 +69,46 @@ justify-content: space-between;
     color: #999999;
     font-weight: 600;
 }
+.nav-list-items li a:hover{
+    color: yellow;
+}
+/* Login and out code start from here  */
+.horizontal-nav .nav-icons{
+    border: none;
+    border-bottom: 5px solid rgb(233, 154, 9);
+    border-radius: 5px;
+    padding:1% 1%;
+}
+.horizontal-nav .nav-icons a{
+    text-decoration: none;
+    color: #2D3A4B;
+    font-size: 25px;
+    font-weight: 800;
+}
+.vertical-nav .nav-icons{
+    border: none;
+    border-bottom: 5px solid rgb(233, 154, 9);
+    border-radius: 5px;
+    padding:1% 1%;
+    /* border: 2px solid black; */
+    /* height: 100%; */
+    /* position: relative;
+    margin-bottom: 20%;
+    display: inline-block; 
+    bottom: 100px;
+    margin-inline: 50%; */
+}
+.vertical-nav .nav-icons a{
+    text-decoration: none;
+    color: #2D3A4B;
+    font-size: 25px;
+    font-weight: 800;
+}
 
 .vertical-nav{
  /* border: 2px solid blue; */
  display: none;
- position: absolute;
+ /* position: absolute; */
  height: 100vh;
  background-color: white;
  width: 100%;
@@ -107,4 +146,18 @@ justify-content: space-between;
         height: 20vh;
         /* border: 2px solid gray; */
     }
+    .horizontal-nav .nav-icons{
+        display: none;
+    }
+    .vertical-nav .nav-list-items {
+        align-items: flex-end;
+        padding-right: 10%;
+    }
 }
+@media only screen and (max-width:500px){
+    .vertical-nav .nav-list-items {
+        align-items: center;
+        /* padding-left: 10%; */
+    }
+}
+
