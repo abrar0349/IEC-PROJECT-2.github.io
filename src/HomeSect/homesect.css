@@ -12,7 +12,6 @@
 }
 
 .Home-sect-1 .section1-text{
-    /* border: 2px solid yellowgreen; */
     width: 50%;
 }
 .Home-sect-1 .section1-text h2{
@@ -90,7 +89,7 @@ font-size: 25px;
 @media (min-width:500px) and (max-width:767px){
     .Home-sect-1{
         background-color: #F1EFF4;
-        background-image: url('');  
+        background-image: none;  
     }
     .Home-sect-1 .section1-text{
         width: 100%;
@@ -108,7 +107,7 @@ font-size: 25px;
 @media only screen and (max-width: 500px) {
     .Home-sect-1{
         background-color: #F1EFF4;
-        background-image: url();
+        background-image: none;
     }
     .Home-sect-1 .section1-text{
         width: 100%;

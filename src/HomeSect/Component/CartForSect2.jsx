@@ -4,17 +4,16 @@ function CartForSect2(props) {
 
   const handleId = (id , e) => {
     e.stopPropagation()
-    console.log('Chick id of every card is should be unique',id)
+    // console.log('Chick id of every card is should be unique',id)
   }
 
   const handleCard = (e) => {
     e.stopPropagation()
-    console.log('I am click on div element of card')
+    // console.log('I am click on div element of card')
   }
 
   let {obj} = props
 
-  // console.log(obj.imgUrl)
   return (
     <div className='cardsect2' onClick={handleCard}>
 

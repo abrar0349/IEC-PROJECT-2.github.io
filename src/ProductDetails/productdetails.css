@@ -1,0 +1,221 @@
+.products-details-container{
+    /* border: 2px solid black; */
+    margin-top: 10vh;
+    background-color: gainsboro;
+    display: flex;
+    width: 100%;
+    padding: 40px;
+    padding-top: 50px;
+}
+.products-details-container .child-container-1{
+    /* border: 2px solid blue; */
+    width: 50%;
+    /* height: 50px; */
+}
+.products-details-container .child-container-1 .mainimage {
+    width: 100%;
+    height: 600px;
+    margin: auto;
+}
+.products-details-container .child-container-1 .images{
+    /* border: 2px solid yellow; */
+    /* width: 48%; */
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.products-details-container .child-container-1 .images .buttons{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 35px;
+    left: 10%;
+    width: 70%;
+    height: 15%;
+    
+}
+.products-details-container .child-container-1 .images .buttons img{
+    width: 30%;
+    cursor: pointer;
+}
+
+.child-container-2{
+    background-color: white;
+    padding-top: 15%;
+    /* font-size: 60px; */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+.child-container-2 .buttons{
+    /* border: 2px solid blue; */
+    margin-top: 20px;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.child-container-2 .buttons input[type = 'number']{
+    width: 20%;
+    /* height: 40px; */
+    /* padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px; */
+    border: 1.5px solid gray;
+    outline: none;
+    /* padding: 10px 0px;
+    display: flex; */
+}
+.child-container-2 p{
+    color: gray;
+    /* line-height: 100px; */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* margin-bottom: 40px; */
+}
+.child-container-2 h5{
+    font-size: 40px;
+}
+.child-container-2 button{
+    border: none;
+    color: white;
+    background-color: #2D3A4B;
+    padding: 5% 10%;
+    cursor: pointer;
+}
+.child-container-2 button:hover{
+    color: black;
+    background-color: yellow;
+}
+.child-container-2 .like{
+    background-color: yellow;
+    color: black;
+}
+.child-container-2 .like:hover{
+    background-color: #2D3A4B;
+    color: white;
+}
+
+@media (min-width:600px) and (max-width:900px){
+    .products-details-container{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 15%;
+        /* padding: 20px;
+        padding-top: 50px; */
+    }
+    .products-details-container .child-container-1,.child-container-2{
+        width: 90%;
+    }
+    .child-container-2{
+        padding-top: 5%;
+        padding-bottom: 10%;
+    }
+    .child-container-2 .buttons{
+        width: 60%;
+    }
+    .child-container-2 p{
+        /* border: 2px solid greenyellow; */
+        width: 75%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (min-width:400px) and (max-width:600px){
+    .products-details-container{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30%;
+        padding: 1px;
+        padding-top: 25px;
+    }
+    .products-details-container .child-container-1,.child-container-2{
+        width: 90%;
+        height: 80%;
+    }
+    .products-details-container .child-container-1 .images .mainimage{
+        height: 460px;
+        /* border: 2px solid yellow; */
+    }
+    .child-container-2{
+        padding-top: 5%;
+        padding-bottom: 10%;
+    }
+    .child-container-2 h5{
+        font-size: 25px;
+        text-align: center;
+    }
+    .child-container-2 .buttons{
+        width: 60%;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .child-container-2 p{
+        /* border: 2px solid greenyellow; */
+        width: 90%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .child-container-2 .buttons .like{
+        /* border: 2px solid gray; */
+        margin-block: 15px;
+    }
+    .child-container-2 .buttons input[type = 'number']{
+        width: 100%;
+        height: 35px;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .products-details-container{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30%;
+    }
+    .products-details-container .child-container-1,.child-container-2{
+        width: 120%;
+        height: 30%;
+    }
+    .products-details-container .child-container-1 .images .mainimage{
+        height: 300px;
+        /* border: 2px solid yellow; */
+    }
+    .child-container-2{
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    .child-container-2 h5{
+        font-size: 25px;
+        text-align: center;
+    }
+    .child-container-2 p{
+        font-size: 15px;
+        text-align: center;
+        width: 90%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .child-container-2 .buttons{
+        width: 60%;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .child-container-2 p{
+        /* border: 2px solid greenyellow; */
+        width: 100%;
+    }
+    .child-container-2 .buttons .like{
+        /* border: 2px solid gray; */
+        margin-block: 8px;
+    }
+    .child-container-2 .buttons input[type = 'number']{
+        width: 100%;
+        height: 30px;
+    }
+}
