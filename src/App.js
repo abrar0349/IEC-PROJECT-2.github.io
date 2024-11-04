@@ -1,10 +1,10 @@
 import './App.css';
 import Navbar from './Navbar/Navbar';
-// import HomeSect from './HomeSect/HomeSect';
-// import CheckOutSect from './CheckOutSect/CheckOutSect';
-// import LoginSect from './LoginSect/LoginSect';
+import HomeSect from './HomeSect/HomeSect';
+import CheckOutSect from './CheckOutSect/CheckOutSect';
+import LoginSect from './LoginSect/LoginSect';
 import FooterSect from './FooterSect/FooterSect';
-// import { Route,  Routes } from 'react-router-dom';
+import { Route,  Routes } from 'react-router-dom';
 import ProductDetailSec from './ProductDetails/ProductDetailSec';
 
 
@@ -14,13 +14,14 @@ function App() {
      <>
 
         <Navbar />
-        <ProductDetailSec />
+        
 
-        {/* <Routes>
-          <Route path = '' element = { <LoginSect />}/>
+        <Routes>
+           <Route path = '' element = { <LoginSect />}/>
            <Route path = '/home' element = { <HomeSect /> }/>
+           <Route path = '/product-details' element = {<ProductDetailSec />}/>
            <Route path = '/checkout' element = { <CheckOutSect /> }/>     
-        </Routes> */}
+        </Routes> 
 
         <FooterSect />
 
