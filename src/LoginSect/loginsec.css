@@ -7,10 +7,12 @@
 }
 .login-container .heading{
     color: #2D3A4B;
+    cursor: pointer;
 }
 .login-container form{
     width: 50%;
-    height: 250px;
+    /* border: 2px solid gray; */
+    /* height: 250px; */
     display: flex;
     flex-direction: column;
     
@@ -33,7 +35,7 @@
 .login-container form .btn button{
     border: none;
     background-color: #2D3A4B;
-    width: 120px;
+    width: 20%;
     height: 50px;
     text-align: center;
     color: white;
@@ -48,6 +50,7 @@
 .login-container form .btn a{
     text-decoration: none;
     color: black;
+    font-size: 100%;
     font-weight: 800;
     cursor: pointer;
 }
@@ -68,7 +71,7 @@
         /* margin-top: -10%; */
         /* border: 2px solid blue; */
         width: 90%;
-        height: 350px;        
+        /* height: 350px;         */
     }
      login-container.heading{
         color: #2D3A4B;

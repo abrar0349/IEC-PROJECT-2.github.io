@@ -5,9 +5,13 @@ function CartForSect2(props) {
   
   let navigate = useNavigate()
 
-  const handleId = (id , e) => {
+  const handleAddToCard = (obj , e) => {
     e.stopPropagation()
-    // console.log('Chick id of every card is should be unique',id)
+    let objForCheckOut = {
+      cardName : obj.cardTitle,
+      cardPrice : obj.cardSalePrice,
+    }
+    console.log('Chick id of every card is should be unique',objForCheckOut)
   }
 
   const handleCard = (e) => {
@@ -23,11 +27,11 @@ function CartForSect2(props) {
     <div className='cardsect2' onClick={handleCard} >
 
         <div className="bgimg">
-          <img src={obj. cardImage1Url} alt="card..." /> 
+          <img src={obj.cardImage1Url} alt="card..." /> 
           {
               obj.cardIsSale ? (<button className='sale'>Sale</button> ) : null
           } 
-            <button className='addcart' onClick={(e) => {handleId(obj.cardId , e)}}>Add To Card</button>
+            <button className='addcart' onClick={(e) => {handleAddToCard(props.obj,e)}}>Add To Card</button>
         </div>
 
         <div className="cardbotmpart">

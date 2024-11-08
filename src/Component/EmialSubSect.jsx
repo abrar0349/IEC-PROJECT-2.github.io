@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-
 import './emailsubsect.css'
+import { Link } from 'react-router-dom'
 
 function EmailSubSect() {
 
@@ -46,10 +46,10 @@ function EmailSubSect() {
         <div className="sect-1-1">
             <p>We always stay with our clients and respect their business. We deliver 100% and provide instant response to help them succeed in constantly changing and challenging business world.</p>
             <ul>
-                <li><a href="*"><i className="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="*"><i className="fa-brands fa-linkedin"></i></a></li>
-                <li><a href="*"><i className="fa-brands fa-twitter"></i></a></li>
-                <li><a href="*"><i className="fa-brands fa-youtube"></i></a></li>
+                <li><Link href="*"><i className="fa-brands fa-facebook-f"></i></Link> </li>
+                <li><Link href="*"><i className="fa-brands fa-linkedin"></i></Link> </li>
+                <li><Link href="*"><i className="fa-brands fa-twitter"></i></Link> </li>
+                <li><Link href="*"><i className="fa-brands fa-youtube"></i></Link> </li>
             </ul>
         </div>
 

@@ -1,15 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function FooterBotmPart() {
+  // Link
   return (
     <div  className='footer-botm-part'>
 
         <div className="botom1">
-        <p>© 2018 BoShop All right reserved. <a href = '*'>webicodev</a></p>
+        <p>© 2018 BoShop All right reserved. <Link href = '*'>webicodev</Link></p>
         </div>
 
         <div className="botom2">
-        <a href="*"><img src="https://demos.webicode.com/html/Bo-shop-html/images/card-icon.png" alt="botmCard.." /></a>
+        <Link href="*"><img src="https://demos.webicode.com/html/Bo-shop-html/images/card-icon.png" alt="botmCard.." /></Link>
         </div>
 
     </div>

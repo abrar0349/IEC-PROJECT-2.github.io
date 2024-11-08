@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './navbar.css'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     let [display , setDisplay] = useState('none')
     let inlineStyle = {display:display};
 
-    const [userLog , setUserLog] = useState(false)
+    const [userLog , setUserLog] = useState(true)
 
     const userLoginFunctionality = () => {
+        setUserLog(false)
+    }
+    const userLogoutFunctionality = () => {
         setUserLog(true)
     }
 
@@ -15,7 +19,7 @@ function Navbar() {
 let btnRef = useRef()
 
 let handlesNav = () => {
-    if(inlineStyle.display == 'none'){
+    if(inlineStyle.display === 'none'){
         setDisplay('block')
         console.log('Correct')
     }else{
@@ -23,7 +27,6 @@ let handlesNav = () => {
         console.log('Wrong')
     }
 }
-
 
 useEffect(() => {
 let btn = btnRef.current;
@@ -40,30 +43,30 @@ return () => {
   <>
     <div className='horizontal-nav'>
 
-            <a href="#" className='nav-img'><img src="https://demos.webicode.com/html/Bo-shop-html/images/logo-foot.png" alt="logo" /></a>
+            <Link href="#" className='nav-img'><img src="https://demos.webicode.com/html/Bo-shop-html/images/logo-foot.png" alt="logo" /></Link>
             <ul className='nav-list-items'>
-                <li><a href="#">Home</a></li>
-                {/* <li><a href="#">Product Details</a></li> */}
-                <li><a href="#">Card</a></li>
-                <li><a href="#">Check Out</a></li>
+                <li><Link href="#">Home</Link></li>
+                {/* <li><Link href="#">Product Details</Link></li> */}
+                <li><Link href="#">Card</Link></li>
+                <li><Link href="#">Check Out</Link></li>
             </ul>
             <i className="fa-solid fa-bars navbar-close-btn" ref={btnRef}></i>
             {/* <i class=""></i> */}
             <div className="nav-icons">
-              {userLog ?   <a href="#">LogIn</a> : 
-                <a href="#" onClick={userLoginFunctionality}>LogOut</a>}
+              {userLog ?   <Link href="#" onClick={userLoginFunctionality}>LogIn</Link> : 
+                <Link href="#" onClick = {userLogoutFunctionality}>LogOut</Link>}
             </div>
 
     </div>
     <div className="vertical-nav" style={inlineStyle} >
         <ul className='nav-list-items'>
-        <li><a href="#">Home</a></li>
-                <li><a href="#">Product Details</a></li>
-                <li><a href="#">Card</a></li>
-                <li><a href="#">Check Out</a></li>
+        <li><Link href="#">Home</Link></li>
+                <li><Link href="#">Product Details</Link></li>
+                <li><Link href="#">Card</Link></li>
+                <li><Link href="#">Check Out</Link></li>
                 <div className='nav-icons'>
-                    {userLog ?   <a href="#">LogIn</a> : 
-                    <a href="#" onClick={userLoginFunctionality}>LogOut</a>}
+                    {userLog ?   <Link href="#">LogIn</Link> : 
+                    <Link href="#" onClick={userLoginFunctionality}>LogOut</Link>}
                  </div>
         </ul>
 

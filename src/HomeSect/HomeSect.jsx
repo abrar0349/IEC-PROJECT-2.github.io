@@ -48,7 +48,7 @@ function HomeSect() {
 
   return (
     <div>
-
+      
         <div className="Home-section1">
             <Homesect1 />
         </div>

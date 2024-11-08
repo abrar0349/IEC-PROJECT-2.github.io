@@ -1,32 +1,60 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function LoginForm() {
+function LoginForm(props) {
+  let {form , setForm} = props
 
+  let SignUpRef = useRef()
+  let LogInRef = useRef()
+
+    let usrAcountData = [{
+      userName : 'Abrar khan',
+      userEmail : 'abrar0349khan@gmail.com',
+      userPassword : 'khan1234'
+    }];
     let initialstate = {
         userEmail : '',
         userPassword : ''
       }
-      const [userData , setUserData] = useState(initialstate)
-      const [empty , setEmpty] = useState('')
-      const navigate = useNavigate()
+    useEffect(() => {
+
+        // let changeColor = () => {
+          if(form){
+            SignUpRef.current.style.color = '#2D3A4B'
+            LogInRef.current.style.color = 'gray'
+            // console.log('Its running in if condition')
+          }else{
+             SignUpRef.current.style.color = 'gray'
+              LogInRef.current.style.color = '#2D3A4B'
+              // console.log("Running is else condition")
+               
+          }
+    })
+        
+    const [userData , setUserData] = useState(initialstate)
+    const [empty , setEmpty] = useState('')
+      // const navigate = useNavigate()
   
       const openUsrAccount = (e) => {
         e.preventDefault()
-        if(userData.userEmail.length <= 0){
-            setEmpty('Email is required')
-        }else if(!userData.userEmail.includes('@gmail.com')){
-          setEmpty('Should add @gmail.com at then end')
-        }else if(userData.userPassword.length <= 0){
-          setEmpty('Password is required')
-        }else if(userData.userPassword.length <= 8){
-          setEmpty('Password length should be greater than 8 charachtor')
-        }else{
-          // console .log(userData)
-          navigate('/home')
-        }
-
-
+        // if(userData.userEmail.length <= 0){
+        //     setEmpty('Email is required')
+        // }else if(userData.userPassword.length <= 0){
+        //   setEmpty('Password is required')
+        // }else if(userData.userPassword.length < 8){
+        //   setEmpty('Password length should be greater than 8 charachtor')
+        // }else{}
+        
+          let findUsrAcount = usrAcountData.find((obj) => {
+            return( obj.userEmail === userData.userEmail ||obj.userName === userData.userEmail && obj.userPassword == userData.userPassword)
+          })
+          if(findUsrAcount !== undefined){
+          // navigate('/home')
+          setEmpty('')
+          console.log(findUsrAcount)
+          }else{
+            setEmpty("In Valid UserName And Password")
+          }
       }
 
       const handleChange = (event) => {
@@ -38,10 +66,10 @@ function LoginForm() {
       }
 
   return (
-<div className='login-container'>
+  <div className='login-container'>
 
     <div className="heading">
-      <h2>   <span> Login  <span className='line'> / </span>    </span> <span>Register</span></h2>
+    <h2>   <span ref = {LogInRef} onClick={() => setForm(true)}> Login  <span className='line'> / </span>  </span>   <span ref={SignUpRef} onClick={() => setForm(false)}>Register</span></h2>
     </div>
 
     <form>
@@ -55,7 +83,7 @@ function LoginForm() {
         <a href="#" >Forget Password</a>
     </div>
     </form>
-</div>
+  </div>
   )
 }
 

@@ -5,10 +5,15 @@ function CheckForm() {
   let userDetail = {
     userName : 'Abrar khan',
     userPassword : 'khan is khan',
-    addToCard : [{cardTitle : 'Jackets For Women',Price : '123.45'},{cardTitle : 'Jackets For Women',Price : '10'}]
+    addToCard : [{cardTitle : 'Jackets For Women',Price : '123.45'},{cardTitle : 'Jackets For Women',Price : '10',countItem: 2}],
+    userIsLogin : true
   }
 
   let totalPrice = userDetail.addToCard.reduce( (prev, newPrice) => {
+    for(let i = 1; i > newPrice.countItem; i++){
+      newPrice.countItem += newPrice.countItem
+    }
+    // let itemCount = newPrice.countItem || 1
     return(prev +  parseFloat(newPrice.Price))
   },0)
   
@@ -132,14 +137,14 @@ function CheckForm() {
 
         <div className="box">
           {
-            userDetail.addToCard.length > 0 ? userDetail.addToCard.map( (obj,id) => {
-              return(
-                  <div className="price" key={id}>
-                  <h4>{obj.cardTitle}</h4>
-                  <h4>${obj.Price}</h4>
-                  </div>
-              )
-            }) : null
+          userDetail.userIsLogin ?   userDetail.addToCard.length > 0 ? userDetail.addToCard.map( (obj,id) => {
+            return(
+                <div className="price" key={id}>
+                <h4>{obj.cardTitle}</h4>
+                <h4>${obj.Price}</h4>
+                </div>
+            )
+          }) : null : null
           }
             {/* <div className="price">
             <h4>Shipping</h4>

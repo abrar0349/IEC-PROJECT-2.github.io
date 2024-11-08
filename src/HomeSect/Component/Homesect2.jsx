@@ -129,7 +129,7 @@ let productCollectionData = [
 
   return (
     <div className='Home-sect-2'>
-      { productCollectionData.map((obj1 , id) => { return(
+      { productCollectionData.map((obj1) => { return(
         <CardForSect2 obj = {obj1} key = {obj1.cardId} />
         )})
       }

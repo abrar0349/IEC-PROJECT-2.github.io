@@ -11,6 +11,7 @@ function ProductDetailSec() {
   function countCardNo(){
     // setCardCount(cardCount+1)
   }
+
 let obj = location.state
 
   let [imageChanger , setImageChanger] = useState(obj.cardImage1Url)
@@ -19,6 +20,7 @@ let obj = location.state
      setImageChanger(e.target.src)
   }
   return (
+    
     <div className='products-details-container'>
 
       <div className="child-container-1">
