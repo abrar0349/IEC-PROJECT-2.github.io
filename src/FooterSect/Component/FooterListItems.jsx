@@ -12,22 +12,22 @@ function FooterListItems() {
                 <div className='para'>
                     <i className="fa-solid fa-location-dot"></i>
                     <div className="para1">
-                    <p><a href="*">Street No. 12, Newyork 12</a></p>
-                    <p><a href="*">MD - 123, USA.</a></p>
+                    <p><a to="#">Street No. 12, Newyork 12</a></p>
+                    <p><a to="#">MD - 123, USA.</a></p>
                     </div>
                 </div>
                 <div className='para'>
                 <i className="fa-solid fa-phone"></i>
                     <div className="para1">
-                    <p><a href="*">1.800.123.456789</a></p>
-                    <p><a href="*">1.800.123.456789</a></p>
+                    <p><a to="#">1.800.123.456789</a></p>
+                    <p><a to="#">1.800.123.456789</a></p>
                     </div>
                 </div>
                 <div className='para'>
                     <i className="fa-solid fa-envelope"></i>
                     <div className="para1">
-                    <p><a href="*">info@BoShop.com</a></p>
-                    <p><a href="*">contact@BoShop.com</a></p>
+                    <p><a to="#">info@BoShop.com</a></p>
+                    <p><a to="#">contact@BoShop.com</a></p>
                     </div>
                 </div>
 
@@ -39,21 +39,21 @@ function FooterListItems() {
 
                 <div className="nesteditems">
                     <ul>
-                        <li><a href="*">Products</a></li>
-                        <li><a href="*">Futures</a></li>
-                        <li><a href="*">Blogs</a></li>
-                        <li><a href="*">Products</a></li>
-                        <li><a href="*">Futures</a></li>
-                        <li><a href="*">Blogs</a></li>
+                        <li><a to="#">Products</a></li>
+                        <li><a to="#">Futures</a></li>
+                        <li><a to="#">Blogs</a></li>
+                        <li><a to="#">Products</a></li>
+                        <li><a to="#">Futures</a></li>
+                        <li><a to="#">Blogs</a></li>
                     </ul>
 
                     <ul>
-                        <li><a href="*">Find a store</a></li>
-                        <li><a href="*">Privacy policy</a></li>
-                        <li><a href="*">Press kits</a></li>
-                        <li><a href="*">Find a store</a></li>
-                        <li><a href="*">Privacy policy</a></li>
-                        <li><a href="*">Press kits</a></li>
+                        <li><a to="#">Find a store</a></li>
+                        <li><a to="#">Privacy policy</a></li>
+                        <li><a to="#">Press kits</a></li>
+                        <li><a to="#">Find a store</a></li>
+                        <li><a to="#">Privacy policy</a></li>
+                        <li><a to="#">Press kits</a></li>
                     </ul>
 
                 </div>
@@ -65,12 +65,12 @@ function FooterListItems() {
                 <h3 className='h3'>Account Info</h3>
 
                 <ul>
-                    <li><a href="*">Products</a></li>
-                    <li><a href="*">Find a store</a></li>
-                    <li><a href="*">Privacy policy</a></li>
-                    <li><a href="*">Futures</a></li>
-                    <li><a href="*">Blogs</a></li>
-                    <li><a href="*">Press kit</a></li>
+                    <li><a to="#">Products</a></li>
+                    <li><a to="#">Find a store</a></li>
+                    <li><a to="#">Privacy policy</a></li>
+                    <li><a to="#">Futures</a></li>
+                    <li><a to="#">Blogs</a></li>
+                    <li><a to="#">Press kit</a></li>
                 </ul>
                 
             </div>

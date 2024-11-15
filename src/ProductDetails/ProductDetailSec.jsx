@@ -24,6 +24,7 @@ let obj = location.state
     <div className='products-details-container'>
 
       <div className="child-container-1">
+
         <div className="images">
 
             <img src= {imageChanger} alt="Loding" className='mainimage'/>

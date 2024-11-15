@@ -1,8 +1,8 @@
 .footersect{
     background-color: rgb(99, 96, 96);
     width: 100%;
-    height: 100vh;
-    margin-top: 5%;
+    /* height: 100vh; */
+    margin-top: 25%;
 }
 .footersect .footer1{
     width: 100%;

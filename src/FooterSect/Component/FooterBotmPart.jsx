@@ -11,7 +11,7 @@ function FooterBotmPart() {
         </div>
 
         <div className="botom2">
-        <Link href="*"><img src="https://demos.webicode.com/html/Bo-shop-html/images/card-icon.png" alt="botmCard.." /></Link>
+        <Link to="#"><img src="https://demos.webicode.com/html/Bo-shop-html/images/card-icon.png" alt="botmCard.." /></Link>
         </div>
 
     </div>

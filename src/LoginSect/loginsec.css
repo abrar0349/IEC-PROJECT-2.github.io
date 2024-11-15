@@ -31,6 +31,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 15px;
 }
 .login-container form .btn button{
     border: none;
@@ -68,10 +69,7 @@
         margin-top: 25%;
     }
     .login-container form{
-        /* margin-top: -10%; */
-        /* border: 2px solid blue; */
         width: 90%;
-        /* height: 350px;         */
     }
      login-container.heading{
         color: #2D3A4B;

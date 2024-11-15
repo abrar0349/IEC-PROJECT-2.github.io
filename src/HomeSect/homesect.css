@@ -1,10 +1,11 @@
 .Home-sect-1{
+    padding-top: 10%;
     background-color: #F1EFF4;
     background-image: url('https://demos.webicode.com/html/Bo-shop-html/images/slide-bg-1.png');
     width: 100%;
     height: 130vh;
     background-repeat: no-repeat;
-    background-size: 68%, 100%;
+    background-size: 60%, 100%;
     background-position: right;
     padding-left: 40px;
     display: flex;
@@ -19,7 +20,7 @@
     font-size: 50px;
 }
 .Home-sect-1 .section1-text h2 sup{
-font-size: 25px;
+    font-size: 25px;
 }
 .Home-sect-1 .section1-text p{
     font-size: 30px;

@@ -22,23 +22,16 @@ function SignUpForm(props) {
 
         useEffect(() => {
  
-        // let changeColor = () => {
               if(form){
                 SignUpRef.current.style.color = '#2D3A4B'
                 LogInRef.current.style.color = 'gray'
-                // setForm(false)
-
-                console.log('Its running in if condition')
+                // console.log('Its running in if condition')
               }else{
                  SignUpRef.current.style.color = 'gray'
                   LogInRef.current.style.color = '#2D3A4B'
-                  console.log("Running is else condition")
-                   
+                  // console.log("Running is else condition")      
               }
-            // }
 
-          // SignUpRef.current.addEventListener('click',changeColor)
-          // LogInRef.current.addEventListener('click',changeColor)
         })
 
       
@@ -56,8 +49,7 @@ function SignUpForm(props) {
             setEmpty('Password is required')
           }else if(userData.userPassword.length < 8){
             setEmpty('Password length should be greater than 8 charachtor')
-          }else{
-            
+          }else{   
               setEmpty("")
               usrAcountData.push(userData)
               console.log(usrAcountData)
