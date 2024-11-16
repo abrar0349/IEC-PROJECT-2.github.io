@@ -1,33 +1,35 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function FooterListItems() {
   return (
     <div className='footer-container'>
           
+          {/* <Link>f</Link> */}
         <div className='child-cont'>
 
             <div className="firstitem">
-                <img src="https://demos.webicode.com/html/Bo-shop-html/images/logo-foot.png" alt="" />
+                <img src="https://demos.webicode.com/html/Bo-shop-html/images/logo-foot.png" alt="loading" />
 
                 <div className='para'>
                     <i className="fa-solid fa-location-dot"></i>
                     <div className="para1">
-                    <p><a to="#">Street No. 12, Newyork 12</a></p>
-                    <p><a to="#">MD - 123, USA.</a></p>
+                    <p><Link to="#">Street No. 12, Newyork 12</Link></p>
+                    <p><Link to="#">MD - 123, USA.</Link></p>
                     </div>
                 </div>
                 <div className='para'>
                 <i className="fa-solid fa-phone"></i>
                     <div className="para1">
-                    <p><a to="#">1.800.123.456789</a></p>
-                    <p><a to="#">1.800.123.456789</a></p>
+                    <p><Link to="#">1.800.123.456789</Link></p>
+                    <p><Link to="#">1.800.123.456789</Link></p>
                     </div>
                 </div>
                 <div className='para'>
                     <i className="fa-solid fa-envelope"></i>
                     <div className="para1">
-                    <p><a to="#">info@BoShop.com</a></p>
-                    <p><a to="#">contact@BoShop.com</a></p>
+                    <p><Link to="#">info@BoShop.com</Link></p>
+                    <p><Link to="#">contact@BoShop.com</Link></p>
                     </div>
                 </div>
 
@@ -39,21 +41,21 @@ function FooterListItems() {
 
                 <div className="nesteditems">
                     <ul>
-                        <li><a to="#">Products</a></li>
-                        <li><a to="#">Futures</a></li>
-                        <li><a to="#">Blogs</a></li>
-                        <li><a to="#">Products</a></li>
-                        <li><a to="#">Futures</a></li>
-                        <li><a to="#">Blogs</a></li>
+                        <li><Link to="#">Products</Link></li>
+                        <li><Link to="#">Futures</Link></li>
+                        <li><Link to="#">Blogs</Link></li>
+                        <li><Link to="#">Products</Link></li>
+                        <li><Link to="#">Futures</Link></li>
+                        <li><Link to="#">Blogs</Link></li>
                     </ul>
 
                     <ul>
-                        <li><a to="#">Find a store</a></li>
-                        <li><a to="#">Privacy policy</a></li>
-                        <li><a to="#">Press kits</a></li>
-                        <li><a to="#">Find a store</a></li>
-                        <li><a to="#">Privacy policy</a></li>
-                        <li><a to="#">Press kits</a></li>
+                        <li><Link to="#">Find a store</Link></li>
+                        <li><Link to="#">Privacy policy</Link></li>
+                        <li><Link to="#">Press kits</Link></li>
+                        <li><Link to="#">Find a store</Link></li>
+                        <li><Link to="#">Privacy policy</Link></li>
+                        <li><Link to="#">Press kits</Link></li>
                     </ul>
 
                 </div>
@@ -65,12 +67,12 @@ function FooterListItems() {
                 <h3 className='h3'>Account Info</h3>
 
                 <ul>
-                    <li><a to="#">Products</a></li>
-                    <li><a to="#">Find a store</a></li>
-                    <li><a to="#">Privacy policy</a></li>
-                    <li><a to="#">Futures</a></li>
-                    <li><a to="#">Blogs</a></li>
-                    <li><a to="#">Press kit</a></li>
+                    <li><Link to="#">Products</Link></li>
+                    <li><Link to="#">Find a store</Link></li>
+                    <li><Link to="#">Privacy policy</Link></li>
+                    <li><Link to="#">Futures</Link></li>
+                    <li><Link to="#">Blogs</Link></li>
+                    <li><Link to="#">Press kit</Link></li>
                 </ul>
                 
             </div>

@@ -7,7 +7,7 @@ function FooterBotmPart() {
     <div  className='footer-botm-part'>
 
         <div className="botom1">
-        <p>© 2018 BoShop All right reserved. <Link href = '*'>webicodev</Link></p>
+        <p>© 2018 BoShop All right reserved. <Link to = '#'>webicodev</Link></p>
         </div>
 
         <div className="botom2">

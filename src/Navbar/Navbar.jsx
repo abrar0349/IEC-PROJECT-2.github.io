@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {  useRef, useState } from 'react';
 import './navbar.css'
 import { Link } from 'react-router-dom';
 
 function Navbar() {
 
     const [userLog , setUserLog] = useState(false)
-    const [iconBtn , setIconBtn] = useState(false)
+    const [iconBtn , setIconBtn] = useState(true)
 
     const userLoginFunctionality = () => {
         setUserLog(false)
@@ -17,16 +17,15 @@ function Navbar() {
 let navRef = useRef()
 let btnRef = useRef()
 
-useEffect( () => {
-    navRef.current.classList.toggle('navbar-responsive')
-},[])
+// useEffect( () => {
+//     navRef.current.classList.toggle('navbar-responsive')
+// },[])
 let changeIcon = () => {
-    navRef.current.classList.toggle('navbar-responsive') 
+    navRef.current.classList.toggle('navbar-responsive')   
     setIconBtn(true)
 }
 let resNavbar = () => {
-    // console.log(navRef.current)
-    navRef.current.classList.toggle('navbar-responsive')   
+    navRef.current.classList.toggle('navbar-responsive')      
     setIconBtn(false)  
 }
 
@@ -37,7 +36,7 @@ let resNavbar = () => {
 
             <Link to="#" className='nav-img'><img src="https://demos.webicode.com/html/Bo-shop-html/images/logo-foot.png" alt="logo" /></Link>
 
-            <ul className='nav-list-items' ref={navRef}>
+            <ul className='nav-list-items navbar-responsive' ref={navRef}>
 
                 <div className='items'>
                 <li><Link to="">Home</Link></li>
