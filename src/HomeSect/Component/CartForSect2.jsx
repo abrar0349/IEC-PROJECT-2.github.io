@@ -16,7 +16,9 @@ function CartForSect2(props) {
 
   const handleCard = (e) => {
     e.stopPropagation()
+    // e.preventDefault()
     let obj = props.obj
+    // console.log(obj)
     navigate('/product-details',{state : obj})
     // console.log('I am click on div element of card',obj)
   }

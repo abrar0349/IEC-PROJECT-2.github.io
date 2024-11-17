@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './productdetails.css'
 import { useLocation } from 'react-router-dom';
 
+
 function ProductDetailSec() {
   let location = useLocation()
-  console.log(location.state)
+
+  let obj = location.state
   
   // let [cardCount , setCardCount] = useState(1)
 
@@ -12,11 +14,10 @@ function ProductDetailSec() {
     // setCardCount(cardCount+1)
   }
 
-let obj = location.state
+
 
   let [imageChanger , setImageChanger] = useState(obj.cardImage1Url)
   function changeImgUrl(e){
-    // console.log(e.target.src)
      setImageChanger(e.target.src)
   }
   return (

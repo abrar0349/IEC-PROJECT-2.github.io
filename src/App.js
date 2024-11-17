@@ -14,14 +14,12 @@ function App() {
      <>
 
         <Navbar />
-        {/* <CheckOutSect />  */}
         <Routes>
            <Route path = '' element = { <HomeSect /> }/>
            <Route path = '/login' element = { <LoginSect />}/>
            <Route path = '/product-details' element = {<ProductDetailSec />}/>
            <Route path = '/checkout' element = { <CheckOutSect /> }/>     
         </Routes> 
-
         <FooterSect />
 
         </>

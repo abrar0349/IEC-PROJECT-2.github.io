@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import './loginsec.css'
 import LoginForm from './Component/LoginForm';
 import EmailSubSect from '../Component/EmialSubSect';
@@ -9,9 +9,9 @@ function LoginSect() {
   let [changeForm , setChangeForm] = useState(true)
 
 
- useEffect(() => {
-  console.log(changeForm)
- },[changeForm])
+//  useEffect(() => {
+//   console.log(changeForm)
+//  },[changeForm])
 
   return (
     <>

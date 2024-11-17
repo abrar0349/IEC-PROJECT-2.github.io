@@ -4,11 +4,11 @@ function SignUpForm(props) {
 
   let {form , setForm} = props
 
-    let usrAcountData = [{
-        userName : 'Abrar khan',
-        userEmail : 'abrar0349khan@gmail.com',
-        userPassword : 'khan1234'
-      }];
+    // let usrAcountData = [{
+    //     userName : 'Abrar khan',
+    //     userEmail : 'abrar0349khan@gmail.com',
+    //     userPassword : 'khan1234'
+    //   }];
 
       let initialstate = {
           userEmail : '',

@@ -7,10 +7,12 @@ function Navbar() {
     const [userLog , setUserLog] = useState(false)
     const [iconBtn , setIconBtn] = useState(true)
 
-    const userLoginFunctionality = () => {
+    const userLoginFunctionality = (e) => {
+        e.preventDefault()
         setUserLog(false)
     }
-    const userLogoutFunctionality = () => {
+    const userLogoutFunctionality = (e) => {
+        e.preventDefault()
         setUserLog(true)
     }
 
@@ -24,7 +26,8 @@ let changeIcon = () => {
     navRef.current.classList.toggle('navbar-responsive')   
     setIconBtn(true)
 }
-let resNavbar = () => {
+let resNavbar = (e) => {
+    e.preventDefault()
     navRef.current.classList.toggle('navbar-responsive')      
     setIconBtn(false)  
 }
@@ -41,7 +44,7 @@ let resNavbar = () => {
                 <div className='items'>
                 <li><Link to="">Home</Link></li>
                 <li><Link to="/checkout">Check Out</Link></li>
-                <li><Link to="#">Registeration</Link></li>
+                <li><Link to="/login">Registeration</Link></li>
                 </div>
 
                 <div className="nav-icons">

@@ -4,6 +4,7 @@ import Homesect1 from './Component/Homesect1';
 import Homesect2 from './Component/Homesect2';
 import Homesect2_1 from './Component/Homesect2_1';
 import EmailSubSect from '../Component/EmialSubSect';
+import { useSelector } from 'react-redux';
 // import FormSect from '../LoginSect/Component/FormSect';
 // import HomeSlider from './Component/HomeSlider';
 
@@ -12,6 +13,9 @@ function HomeSect() {
   let liAsBtn2 = useRef()
 
   let [component , setComponent] = useState(true)
+
+  let arr = useSelector((arr) => arr.userAccount)
+  console.log(arr)
 
   useEffect(() => {
     let btn1 = liAsBtn1.current
@@ -66,7 +70,7 @@ function HomeSect() {
         </div>
 
         <div className="Home-section3">
-          <EmailSubSect />
+            <EmailSubSect />
         </div>
       
     </div>
