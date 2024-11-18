@@ -1,71 +1,82 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { createUsrAcc } from '../../Slice/userSlice'
+import { useNavigate } from 'react-router-dom'
 
 function SignUpForm(props) {
 
-  let {form , setForm} = props
+    let {form , setForm} = props
 
-    // let usrAcountData = [{
-    //     userName : 'Abrar khan',
-    //     userEmail : 'abrar0349khan@gmail.com',
-    //     userPassword : 'khan1234'
-    //   }];
+    let usrAcountData = useSelector((arr) => arr.userAccount)
+    let dispatch = useDispatch()
+    let navigate = useNavigate()
 
-      let initialstate = {
-          userEmail : '',
-          userName : '',
-          userPassword : ''
-        }
-        const [userData , setUserData] = useState(initialstate)
-        const [empty , setEmpty] = useState('')
-        let SignUpRef = useRef()
-        let LogInRef = useRef()
 
-        useEffect(() => {
- 
-              if(form){
-                SignUpRef.current.style.color = '#2D3A4B'
-                LogInRef.current.style.color = 'gray'
-                // console.log('Its running in if condition')
-              }else{
-                 SignUpRef.current.style.color = 'gray'
-                  LogInRef.current.style.color = '#2D3A4B'
-                  // console.log("Running is else condition")      
-              }
+    let initialstate = {
+      userName : '',
+      userGmail : '',
+      userPassword : '',
+      userCheckOut : [],
+      isLogIn : false
+      }
+      const [userData , setUserData] = useState(initialstate)
+      const [empty , setEmpty] = useState('')
+      let SignUpRef = useRef()
+      let LogInRef = useRef()
 
-        })
+      useEffect(() => {
 
-      
-        // const navigate = useNavigate()
-    
-        const openUsrAccount = (e) => {
-          e.preventDefault()
-          if(userData.userEmail.length <= 0){
-            setEmpty('Email is required')
-          }else if (!userData.userEmail.includes('@gmail.com') ){
-            setEmpty("Gmail Must Include @gmail.com")
-          }else if(userData.userName.length <= 0){
-            setEmpty('UserName is required')
-          }else if(userData.userPassword.length <= 0){
-            setEmpty('Password is required')
-          }else if(userData.userPassword.length < 8){
-            setEmpty('Password length should be greater than 8 charachtor')
-          }else{   
-              setEmpty("")
-              usrAcountData.push(userData)
-              console.log(usrAcountData)
-         
-          }
-        }
+            if(form){
+              SignUpRef.current.style.color = '#2D3A4B'
+              LogInRef.current.style.color = 'gray'
+              // console.log('Its running in if condition')
+            }else{
+                SignUpRef.current.style.color = 'gray'
+                LogInRef.current.style.color = '#2D3A4B'
+                // console.log("Running is else condition")      
+            }
+
+      })
+
   
-        const handleChange = (event) => {
-          if(event.target.name === 'userName'){
-            setUserData({...userData, userName : event.target.value})
-          }else if(event.target.name === 'userEmail'){
-            setUserData({...userData , userEmail : event.target.value })
-          }else{
-            setUserData({...userData,userPassword : event.target.value})
-          }
+      const openUsrAccount = (e) => {
+        e.preventDefault()
+        if(userData.userGmail.length <= 0){
+          setEmpty('Email is required')
+        }else if (!userData.userGmail.includes('@gmail.com') ){
+          setEmpty("Email Must Include @gmail.com")
+        }else if(userData.userName.length <= 0){
+          setEmpty('UserName is required')
+        }else if(userData.userPassword.length <= 0){
+          setEmpty('Password is required')
+        }else if(userData.userPassword.length < 8){
+          setEmpty('Password length should be greater than 8 charachtor')
+        }else{   
+            setEmpty("")
+            let usrExist = usrAcountData.find( (usr) => usr.userGmail === userData.userGmail)
+            // console.log('this is find Data',usrExist)
+            if(usrExist === undefined){
+              // console.log('now if condition is running',usrExist)
+              dispatch(createUsrAcc(userData))
+              navigate('/')
+            }else{
+              setEmpty('Email is already use')
+            }
+            // console.log(usrAcountData)
+        
         }
+        // console.log('------End of Function-------')
+      }
+
+      const handleChange = (event) => {
+        if(event.target.name === 'userName'){
+          setUserData({...userData, userName : event.target.value})
+        }else if(event.target.name === 'userEmail'){
+          setUserData({...userData , userGmail : event.target.value })
+        }else{
+          setUserData({...userData,userPassword : event.target.value})
+        }
+      }
 
 
   return (

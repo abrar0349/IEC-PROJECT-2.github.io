@@ -1,21 +1,25 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 function CheckForm() {
 
-  let userDetail = {
-    userName : 'Abrar khan',
-    userPassword : 'khan is khan',
-    addToCard : [{cardTitle : 'Jackets For Women',Price : '123.45'},{cardTitle : 'Jackets For Women',Price : '10',countItem: 2}],
-    userIsLogin : true
-  }
+  let usrObj = useSelector( (obj) => obj.setUsrInAccount)
+  
+  // let userDetail = {
+    //   userName : 'Abrar khan', usrObj.userCheckOut
+  //   userPassword : 'khan is khan',
+  //   addToCard : [{cardTitle : 'Jackets For Women',Price : '123.45'},{cardTitle : 'Jackets For Women',Price : '10',countItem: 2}],
+  //   userIsLogin : true
+  // }
 
-  let totalPrice = userDetail.addToCard.reduce( (prev, newPrice) => {
+  let totalPrice = usrObj.userCheckOut.reduce( (prev, newPrice) => {
     for(let i = 1; i > newPrice.countItem; i++){
       newPrice.countItem += newPrice.countItem
     }
     // let itemCount = newPrice.countItem || 1
-    return(prev +  parseFloat(newPrice.Price))
+    return(prev +  parseFloat(newPrice.cardPrice))
   },0)
+
   
   let initialies  = {
     usrFirstName : '',
@@ -137,11 +141,11 @@ function CheckForm() {
 
         <div className="box">
           {
-          userDetail.userIsLogin ?   userDetail.addToCard.length > 0 ? userDetail.addToCard.map( (obj,id) => {
+          usrObj.isLogIn ?   usrObj.userCheckOut.length > 0 ? usrObj.userCheckOut.map( (obj,id) => {
             return(
                 <div className="price" key={id}>
-                <h4>{obj.cardTitle}</h4>
-                <h4>${obj.Price}</h4>
+                <h4>{obj.cardName}</h4>
+                <h4>${obj.cardPrice}</h4>
                 </div>
             )
           }) : null : null
@@ -154,10 +158,10 @@ function CheckForm() {
             <h4>VAT</h4>
             <h4>$598</h4>
             </div> */}
-            { totalPrice > 0 ? <div className="price">
+            {usrObj.isLogIn ? totalPrice > 0 ? <div className="price">
             <h4>TOTAL COST</h4>
             <h4>${totalPrice}</h4>
-            </div>: null}
+            </div>: null : null}
 
             <div className="checkboxs">
             <div className="check">
@@ -175,10 +179,7 @@ function CheckForm() {
                 <input type="radio" id='check3'/>
                 <label htmlFor="check3">PAYPAL</label>
             </div>
-            {/* <div className="check">
-                <input type="radio" id='check2'/>
-                <label htmlFor="check2">CASH ON DELIVERY</label>
-            </div> */}
+
             </div>
 
             <input type="submit" value='PLACE ORDER'/>

@@ -1,8 +1,12 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { userAddToCard } from '../../Slice/findUsrSlice'
 
 function CartForSect2(props) {
-  
+let usrObj = useSelector( (obj) => obj.setUsrInAccount)
+// console.log('This is cartForsect2 of home compoent',usrObj)
+let dispatch = useDispatch()
   let navigate = useNavigate()
 
   const handleAddToCard = (obj , e) => {
@@ -12,15 +16,13 @@ function CartForSect2(props) {
       cardPrice : obj.cardSalePrice,
     }
     console.log('Chick id of every card is should be unique',objForCheckOut)
+    dispatch(userAddToCard(objForCheckOut))
   }
 
   const handleCard = (e) => {
     e.stopPropagation()
-    // e.preventDefault()
     let obj = props.obj
-    // console.log(obj)
     navigate('/product-details',{state : obj})
-    // console.log('I am click on div element of card',obj)
   }
 
   let {obj} = props

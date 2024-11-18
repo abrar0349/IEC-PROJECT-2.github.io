@@ -1,36 +1,54 @@
-import React, {  useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './navbar.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { userLogoutAccount } from '../Slice/findUsrSlice';
 
 function Navbar() {
-
-    const [userLog , setUserLog] = useState(false)
+    let userObj = useSelector((obj) => obj.setUsrInAccount)
+    let dispatch = useDispatch()
+    let navigate = useNavigate()
+    // const  [userLogIn , setUserLogIn] =useState(false)
+// console.log('the navbar obj',userObj)
+    // const [userLog , setUserLog] = useState(false)
     const [iconBtn , setIconBtn] = useState(true)
 
     const userLoginFunctionality = (e) => {
         e.preventDefault()
-        setUserLog(false)
+        // setUserLog(false)
+        navigate('/login',{state : false})
+        
     }
     const userLogoutFunctionality = (e) => {
         e.preventDefault()
-        setUserLog(true)
+        // setUserLogIn(true)
+        dispatch(userLogoutAccount({
+            ...userObj,
+            isLogIn : false
+        }))
+        // userObj
+        console.log('navbar function log out',userObj)
+        // navigate('/')
+        // userObj
+
     }
 
-let navRef = useRef()
-let btnRef = useRef()
+    let navRef = useRef()
+    let btnRef = useRef()
 
 // useEffect( () => {
-//     navRef.current.classList.toggle('navbar-responsive')
-// },[])
-let changeIcon = () => {
-    navRef.current.classList.toggle('navbar-responsive')   
-    setIconBtn(true)
-}
-let resNavbar = (e) => {
-    e.preventDefault()
-    navRef.current.classList.toggle('navbar-responsive')      
-    setIconBtn(false)  
-}
+//     // navRef.current.classList.toggle('navbar-responsive')
+//     console.log('useEffect function is runing in navbar')
+// })
+    let changeIcon = () => {
+        navRef.current.classList.toggle('navbar-responsive')   
+        setIconBtn(true)
+    }
+    let resNavbar = (e) => {
+        e.preventDefault()
+        navRef.current.classList.toggle('navbar-responsive')      
+        setIconBtn(false)  
+    }
 
 
   return (
@@ -48,8 +66,9 @@ let resNavbar = (e) => {
                 </div>
 
                 <div className="nav-icons">
-                    {userLog ?   <Link to="#" onClick={userLoginFunctionality}>LogIn</Link> : 
-                    <Link to="#" onClick = {userLogoutFunctionality}>LogOut</Link>}
+        {/* console.log('This is navbar',) */}
+                    { userObj.isLogIn ? <Link to="#" onClick = {userLogoutFunctionality}>LogOut</Link>  :  <Link to="#" onClick={userLoginFunctionality}>LogIn</Link> 
+                    }
                 </div>
             </ul>
             

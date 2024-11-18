@@ -15,7 +15,7 @@ function HomeSect() {
   let [component , setComponent] = useState(true)
 
   let arr = useSelector((arr) => arr.userAccount)
-  console.log(arr)
+  // console.log(arr)
 
   useEffect(() => {
     let btn1 = liAsBtn1.current

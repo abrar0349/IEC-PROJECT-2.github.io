@@ -1,17 +1,24 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { userLogin } from '../../Slice/userSlice'
+import { userLoginInAccount } from '../../Slice/findUsrSlice'
 
 function LoginForm(props) {
   let {form , setForm} = props
 
   let SignUpRef = useRef()
   let LogInRef = useRef()
+  let navigate = useNavigate()
+  
+  let usrAcountData = useSelector((arr) => arr.userAccount)
+  let dispatch = useDispatch()
 
-    let usrAcountData = [{
-      userName : 'Abrar khan',
-      userEmail : 'abrar0349khan@gmail.com',
-      userPassword : 'khan1234'
-    }];
+    // let usrAcountData = [{
+    //   userName : 'Abrar khan',
+    //   userEmail : 'abrar0349khan@gmail.com',
+    //   userPassword : 'khan1234'
+    // }];
     let initialstate = {
         userEmail : '',
         userPassword : ''
@@ -48,10 +55,29 @@ function LoginForm(props) {
           let findUsrAcount = usrAcountData.find((obj) => {
             return( obj.userEmail === userData.userEmail ||obj.userName === userData.userEmail && obj.userPassword == userData.userPassword)
           })
+
           if(findUsrAcount !== undefined){
           // navigate('/home')
-          setEmpty('')
-          console.log(findUsrAcount)
+            setEmpty('')
+            // let findUsrAcount = {
+            //   ...findUsrAcount,
+            //   isLogIn : true
+            // }
+            let usrLogInActive = {
+              ...findUsrAcount,
+              isLogIn : true
+            }
+            dispatch(userLoginInAccount(usrLogInActive))
+            navigate('/')
+
+            // console.log('login form',usrLogInActive)
+            // console.log(userData.userEmail,userData.userPassword)
+          //  let UserAccount =  dispatch(userLogin({
+          //   userNameorEmail : userData.userEmail,
+          //   userPassword : userData.userPassword
+          //  }
+          //   ))
+            // console.log('userAccount in login.jsx file',UserAccount)
           }else{
             setEmpty("In Valid UserName And Password")
           }
