@@ -5,13 +5,7 @@ function CheckForm() {
 
   let usrObj = useSelector( (obj) => obj.setUsrInAccount)
   
-  // let userDetail = {
-    //   userName : 'Abrar khan', usrObj.userCheckOut
-  //   userPassword : 'khan is khan',
-  //   addToCard : [{cardTitle : 'Jackets For Women',Price : '123.45'},{cardTitle : 'Jackets For Women',Price : '10',countItem: 2}],
-  //   userIsLogin : true
-  // }
-  console.log('checkout Form',usrObj)
+  // console.log('checkout Form',usrObj)
 
   let totalPrice = usrObj.userCheckOut.reduce( (prev, newPrice) => {
     console.log(newPrice.productAmount)
@@ -19,7 +13,6 @@ function CheckForm() {
     return(prev +  totalPrice)
   },0)
 
-  
   let initialies  = {
     usrFirstName : '',
     usrLastName : '',
@@ -46,7 +39,7 @@ function CheckForm() {
         setEmpty('Please Give Us Your Address')
       }else{
         setEmpty('')
-        console.log('user bill information data sub',userBillDetails)
+        // console.log('user bill information data sub',userBillDetails)
       }
   }
 

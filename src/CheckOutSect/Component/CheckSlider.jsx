@@ -1,9 +1,9 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 
 function CheckSlider() {
-  let usrObj = useSelector((obj) => obj.setUsrInAccount)
-  console.log('this is checkout file',usrObj)
+  // let usrObj = useSelector((obj) => obj.setUsrInAccount)
+  // console.log('this is checkout file',usrObj)
   return (
     <div className='check_slider_container'>
         

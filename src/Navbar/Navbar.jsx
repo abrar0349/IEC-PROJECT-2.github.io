@@ -13,7 +13,7 @@ function Navbar() {
 
     const userLoginFunctionality = (e) => {
         e.preventDefault()
-        navigate('/login',{state : false})
+        navigate('/login',{state: {isResgiester : false}})
         
     }
     const userLogoutFunctionality = (e) => {
@@ -21,11 +21,6 @@ function Navbar() {
         dispatch(userLogoutAccount({
             ...userObj,
             isLogIn : false}))
-        // userObj
-        // console.log('navbar function log out',userObj)
-        // navigate('/')
-        // userObj
-
     }
 
     let navRef = useRef()
@@ -53,7 +48,7 @@ function Navbar() {
                 <div className='items'>
                 <li><Link to="">Home</Link></li>
                 <li><Link to="/checkout">Check Out</Link></li>
-                <li><Link to="/login" >Registeration</Link></li>
+                <li><Link to="/login">Registeration</Link></li>
                 </div>
 
                 <div className="nav-icons">
