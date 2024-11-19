@@ -52,7 +52,10 @@
     width: 80%;
     display: flex;
     justify-content: space-evenly;
-
+    transition: all 0.8s;
+}
+.child-container-2 .buttons button:active{
+    background-color: gray;
 }
 .child-container-2 .buttons input[type = 'number']{
     width: 20%;

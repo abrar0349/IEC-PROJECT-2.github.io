@@ -17,7 +17,10 @@ let usrFinded = createSlice({
     reducers :  { 
         userLoginInAccount : (state , action) => {
             // state = state
-            return action.payload
+            return {
+                ...action.payload,
+                userCheckOut: state.userCheckOut.map((obj) => obj)
+            }
         },
         userLogoutAccount : (state , action) => {
             // state = state

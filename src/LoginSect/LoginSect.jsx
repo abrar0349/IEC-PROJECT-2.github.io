@@ -11,14 +11,12 @@ function LoginSect() {
 
   let location = useLocation()
 
-  // let isRegistered = location.state.isRegistered;
   useEffect( () => {
     if(location.state?.isResgiester != null  ){
       setChangeForm(true)
       }
   },[location])
 
-    // console.log()
   
   return (
     <>
