@@ -10,7 +10,7 @@ let initialState = [
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
-      // cardAmount : cardCount,
+      productAmount : 1,
       cardSalePrice : '199.00',
       cardOriginalPrice : '299.00',
     },
@@ -23,7 +23,7 @@ let initialState = [
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
-      // cardAmount : cardCount,
+      productAmount : 1,
       cardSalePrice : '199.00',
       cardOriginalPrice : '299.00',
     },
@@ -36,7 +36,7 @@ let initialState = [
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
-      // cardAmount : cardCount,
+      productAmount : 1,
       cardSalePrice : '199.00',
       cardOriginalPrice : '299.00',
     },
@@ -49,7 +49,7 @@ let initialState = [
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
-      // cardAmount : cardCount,
+      productAmount : 1,
       cardSalePrice : '199.00',
       cardOriginalPrice : '299.00',
     },
@@ -62,7 +62,7 @@ let initialState = [
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
-      // cardAmount : cardCount,
+      productAmount : 1,
       cardSalePrice : '199.00',
       cardOriginalPrice : '299.00',
     },
@@ -75,7 +75,7 @@ let initialState = [
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
-      // cardAmount : cardCount,
+      productAmount : 1,
       cardSalePrice : '199.00',
       cardOriginalPrice : '299.00',
     },
@@ -88,7 +88,7 @@ let initialState = [
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
-      // cardAmount : cardCount,
+      productAmount : 1,
       cardSalePrice : '199.00',
       cardOriginalPrice : '299.00',
     },
@@ -101,7 +101,7 @@ let initialState = [
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
-      // cardAmount : cardCount,
+      productAmount : 1,
       cardSalePrice : '199.00',
       cardOriginalPrice : '299.00',
     },]
@@ -114,5 +114,5 @@ const arrOfCard2 = createSlice({
     },
 })
 
-export const {} = arrOfCard2.actions
+// export const {} = arrOfCard2.actions
 export default arrOfCard2.reducer

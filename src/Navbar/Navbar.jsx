@@ -8,26 +8,21 @@ function Navbar() {
     let userObj = useSelector((obj) => obj.setUsrInAccount)
     let dispatch = useDispatch()
     let navigate = useNavigate()
-    // const  [userLogIn , setUserLogIn] =useState(false)
 // console.log('the navbar obj',userObj)
-    // const [userLog , setUserLog] = useState(false)
     const [iconBtn , setIconBtn] = useState(true)
 
     const userLoginFunctionality = (e) => {
         e.preventDefault()
-        // setUserLog(false)
         navigate('/login',{state : false})
         
     }
     const userLogoutFunctionality = (e) => {
         e.preventDefault()
-        // setUserLogIn(true)
         dispatch(userLogoutAccount({
             ...userObj,
-            isLogIn : false
-        }))
+            isLogIn : false}))
         // userObj
-        console.log('navbar function log out',userObj)
+        // console.log('navbar function log out',userObj)
         // navigate('/')
         // userObj
 
@@ -36,10 +31,6 @@ function Navbar() {
     let navRef = useRef()
     let btnRef = useRef()
 
-// useEffect( () => {
-//     // navRef.current.classList.toggle('navbar-responsive')
-//     console.log('useEffect function is runing in navbar')
-// })
     let changeIcon = () => {
         navRef.current.classList.toggle('navbar-responsive')   
         setIconBtn(true)
@@ -62,11 +53,10 @@ function Navbar() {
                 <div className='items'>
                 <li><Link to="">Home</Link></li>
                 <li><Link to="/checkout">Check Out</Link></li>
-                <li><Link to="/login">Registeration</Link></li>
+                <li><Link to="/login" >Registeration</Link></li>
                 </div>
 
                 <div className="nav-icons">
-        {/* console.log('This is navbar',) */}
                     { userObj.isLogIn ? <Link to="#" onClick = {userLogoutFunctionality}>LogOut</Link>  :  <Link to="#" onClick={userLoginFunctionality}>LogIn</Link> 
                     }
                 </div>

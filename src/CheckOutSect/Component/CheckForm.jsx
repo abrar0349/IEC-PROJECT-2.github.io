@@ -11,13 +11,12 @@ function CheckForm() {
   //   addToCard : [{cardTitle : 'Jackets For Women',Price : '123.45'},{cardTitle : 'Jackets For Women',Price : '10',countItem: 2}],
   //   userIsLogin : true
   // }
+  console.log('checkout Form',usrObj)
 
   let totalPrice = usrObj.userCheckOut.reduce( (prev, newPrice) => {
-    for(let i = 1; i > newPrice.countItem; i++){
-      newPrice.countItem += newPrice.countItem
-    }
-    // let itemCount = newPrice.countItem || 1
-    return(prev +  parseFloat(newPrice.cardPrice))
+    console.log(newPrice.productAmount)
+    let totalPrice = parseFloat(newPrice.cardPrice) * Number(newPrice.productAmount)
+    return(prev +  totalPrice)
   },0)
 
   
@@ -46,6 +45,7 @@ function CheckForm() {
       }else if(userBillDetails.usrAddr.length <= 0){
         setEmpty('Please Give Us Your Address')
       }else{
+        setEmpty('')
         console.log('user bill information data sub',userBillDetails)
       }
   }
@@ -150,14 +150,6 @@ function CheckForm() {
             )
           }) : null : null
           }
-            {/* <div className="price">
-            <h4>Shipping</h4>
-            <h4>$598</h4>
-            </div>
-            <div className="price">
-            <h4>VAT</h4>
-            <h4>$598</h4>
-            </div> */}
             {usrObj.isLogIn ? totalPrice > 0 ? <div className="price">
             <h4>TOTAL COST</h4>
             <h4>${totalPrice}</h4>

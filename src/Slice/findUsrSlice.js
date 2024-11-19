@@ -7,7 +7,8 @@ let initialState = {
     userGmail : 'abrar0349khan@gmail.com',
     userPassword : 'khan',
     userCheckOut : [],
-    isLogIn : false
+    isLogIn : false,
+    // {productAmount : Number(1)}
 }
 
 let usrFinded = createSlice({
@@ -15,15 +16,27 @@ let usrFinded = createSlice({
     initialState,
     reducers :  { 
         userLoginInAccount : (state , action) => {
+            // state = state
             return action.payload
         },
         userLogoutAccount : (state , action) => {
+            // state = state
             return action.payload
         },
         userAddToCard: (state , action) => {
                 state.userCheckOut.push(action.payload)
                 // return action.payload
     
+        },
+        productIncreament : (state , action) =>{
+            const {count , condition1} = action.payload
+           state.userCheckOut.forEach( (obj) => {
+            if(obj.cardId === condition1){
+                obj.productAmount = count
+                // console.log(state)
+            }
+           })
+            
         }
     } 
 
@@ -31,5 +44,5 @@ let usrFinded = createSlice({
 
 // console.log('findUsrSlice in file',initialState)
 
-export const {userLoginInAccount , userLogoutAccount , userAddToCard} = usrFinded.actions
+export const {userLoginInAccount , userLogoutAccount , userAddToCard , productIncreament} = usrFinded.actions
 export default usrFinded.reducer

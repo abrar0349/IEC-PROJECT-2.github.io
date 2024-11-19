@@ -1,21 +1,24 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { userAddToCard } from '../../Slice/findUsrSlice'
 
 function CartForSect2(props) {
-let usrObj = useSelector( (obj) => obj.setUsrInAccount)
-// console.log('This is cartForsect2 of home compoent',usrObj)
-let dispatch = useDispatch()
+  let dispatch = useDispatch()
   let navigate = useNavigate()
+
+  
+  let {obj} = props
 
   const handleAddToCard = (obj , e) => {
     e.stopPropagation()
     let objForCheckOut = {
       cardName : obj.cardTitle,
+      cardId : obj.cardId,
       cardPrice : obj.cardSalePrice,
+      productAmount : obj.productAmount
     }
-    console.log('Chick id of every card is should be unique',objForCheckOut)
+    // console.log('Chick id of every card is should be unique',objForCheckOut)
     dispatch(userAddToCard(objForCheckOut))
   }
 
@@ -25,7 +28,6 @@ let dispatch = useDispatch()
     navigate('/product-details',{state : obj})
   }
 
-  let {obj} = props
 
   return (
     <div className='cardsect2' onClick={handleCard} >

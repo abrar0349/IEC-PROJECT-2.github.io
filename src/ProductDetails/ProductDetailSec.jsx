@@ -1,20 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import './productdetails.css'
 import { useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { productIncreament, userAddToCard } from '../Slice/findUsrSlice';
+
 
 
 function ProductDetailSec() {
   let location = useLocation()
+  // let usrObj = useSelector((obj) => obj.setUsrInAccount)
+  let dispatch = useDispatch()
+  const [cardCount , setCardCount] = useState(1)
 
   let obj = location.state
   
   // let [cardCount , setCardCount] = useState(1)
-
-  function countCardNo(){
-    // setCardCount(cardCount+1)
+  const addIntoCard = () => {
+    // e.stopPropagation()
+    let objForCheckOut = {
+      cardName : obj.cardTitle,
+      cardId : obj.cardId,
+      cardPrice : obj.cardSalePrice,
+      productAmount : cardCount
+    }
+    // console.log('Chick id of every card is should be unique',objForCheckOut)
+    dispatch(userAddToCard(objForCheckOut))
   }
 
-
+  function countCardNo(e){
+    // e.target.value += 1
+    setCardCount((prevCount) => prevCount + 1);
+    // let no = usrObj.productAmount += 1
+    dispatch(productIncreament({count : e.target.value , condition1 : obj.cardId}))
+    // console.log()
+  }
 
   let [imageChanger , setImageChanger] = useState(obj.cardImage1Url)
   function changeImgUrl(e){
@@ -48,9 +67,9 @@ function ProductDetailSec() {
         <p>{obj.cardDescr2}</p>
 
         <div className="buttons">
-          <input type="number" id="quantity" name="quantity" min="1"  onChange={countCardNo}/>
+          <input type="number" id="quantity" name="quantity" min="1"  value = {cardCount} onChange={countCardNo}/>
           <button className='like'>Like</button>
-          <button className='add'>Add To Card</button>
+          <button className='add' onClick={(e) => {addIntoCard(e)}} >Add To Card</button>
         </div>
       </div>
 
