@@ -22,15 +22,30 @@ let usrFinded = createSlice({
                 userCheckOut: state.userCheckOut.map((obj) => obj)
             }
         },
+
         userLogoutAccount : (state , action) => {
             // state = state
             return action.payload
         },
+
         userAddToCard: (state , action) => {
+            if(state.userCheckOut.length === 0){
                 state.userCheckOut.push(action.payload)
-                // return action.payload
-    
+            }else{
+                // state.userCheckOut.filter( (obj) => {
+                //     console.log('outer else part of if',obj.cardId , action.payload.cardId)
+                let findobj = state.userCheckOut.find( (obj) => obj.cardId === action.payload.cardId)
+                // console.log('findob value', findobj)
+                if(!findobj){
+                    // console.log('inner if condition', action.payload.cardId)
+                    state.userCheckOut.push(action.payload)
+                    console.log(action.payload)
+                }
+                // })
+            }
+        
         },
+
         productIncreament : (state , action) =>{
             const {count , condition1} = action.payload
            state.userCheckOut.forEach( (obj) => {
@@ -45,7 +60,6 @@ let usrFinded = createSlice({
 
 })
 
-// console.log('findUsrSlice in file',initialState)
 
 export const {userLoginInAccount , userLogoutAccount , userAddToCard , productIncreament} = usrFinded.actions
 export default usrFinded.reducer
