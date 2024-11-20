@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { userRemoverToCard } from '../../Slice/findUsrSlice'
 
 function CheckForm() {
 
   let usrObj = useSelector( (obj) => obj.setUsrInAccount)
-  
-  // console.log('checkout Form',usrObj)
+  let dispatch = useDispatch()
 
   let totalPrice = usrObj.userCheckOut.reduce( (prev, newPrice) => {
     console.log(newPrice.productAmount)
@@ -139,6 +139,7 @@ function CheckForm() {
                 <div className="price" key={id}>
                 <h4>{obj.cardName}</h4>
                 <h4>${obj.cardPrice}</h4>
+                <i class="fa-solid fa-trash" onClick={() => dispatch(userRemoverToCard(id))}></i>
                 </div>
             )
           }) : null : null

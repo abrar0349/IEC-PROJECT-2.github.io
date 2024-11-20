@@ -46,6 +46,10 @@ let usrFinded = createSlice({
         
         },
 
+        userRemoverToCard : (state , action) => {
+            state.userCheckOut.splice(action.payload , 1)
+        },
+
         productIncreament : (state , action) =>{
             const {count , condition1} = action.payload
            state.userCheckOut.forEach( (obj) => {
@@ -61,5 +65,5 @@ let usrFinded = createSlice({
 })
 
 
-export const {userLoginInAccount , userLogoutAccount , userAddToCard , productIncreament} = usrFinded.actions
+export const {userLoginInAccount , userLogoutAccount , userAddToCard , productIncreament , userRemoverToCard} = usrFinded.actions
 export default usrFinded.reducer
