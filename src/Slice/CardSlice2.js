@@ -11,8 +11,8 @@ let initialState = [
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
       productAmount : 1,
-      cardSalePrice : '199.00',
-      cardOriginalPrice : '299.00',
+      cardSalePrice : '99.90',
+      cardOriginalPrice : '199.00',
     },
     {
       cardId : '011',
@@ -22,10 +22,10 @@ let initialState = [
       cardImage3Url : "https://demos.webicode.com/html/Bo-shop-html/images/item-img-1-1.jpg",
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
-      cardIsSale : true,
+      cardIsSale : false,
       productAmount : 1,
-      cardSalePrice : '199.00',
-      cardOriginalPrice : '299.00',
+      cardSalePrice : '59.40',
+      cardOriginalPrice : '99.45',
     },
     {
       cardId : '012',
@@ -37,8 +37,8 @@ let initialState = [
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
       productAmount : 1,
-      cardSalePrice : '199.00',
-      cardOriginalPrice : '299.00',
+      cardSalePrice : '169.00',
+      cardOriginalPrice : '269.90',
     },
     {
       cardId : '013',
@@ -50,8 +50,8 @@ let initialState = [
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
       productAmount : 1,
-      cardSalePrice : '199.00',
-      cardOriginalPrice : '299.00',
+      cardSalePrice : '399.50',
+      cardOriginalPrice : '600.00',
     },
     {
       cardId : '015',
@@ -61,7 +61,7 @@ let initialState = [
       cardImage3Url : "https://demos.webicode.com/html/Bo-shop-html/images/item-img-1-1.jpg",
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
-      cardIsSale : true,
+      cardIsSale : false,
       productAmount : 1,
       cardSalePrice : '199.00',
       cardOriginalPrice : '299.00',
@@ -76,8 +76,8 @@ let initialState = [
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
       cardIsSale : true,
       productAmount : 1,
-      cardSalePrice : '199.00',
-      cardOriginalPrice : '299.00',
+      cardSalePrice : '99.00',
+      cardOriginalPrice : '399.90',
     },
     {
       cardId : '017',
@@ -87,10 +87,10 @@ let initialState = [
       cardImage3Url : "https://demos.webicode.com/html/Bo-shop-html/images/item-img-1-1.jpg",
       cardDescr1 :'This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show. He who searches for meaning here will be sorely disappointed.',
       cardDescr2 : 'These words are here to provide the reader with a basic impression of  how actual text will appear in its final presentation.',
-      cardIsSale : true,
+      cardIsSale : false,
       productAmount : 1,
       cardSalePrice : '199.00',
-      cardOriginalPrice : '299.00',
+      cardOriginalPrice : '299.70',
     },
     {
       cardId : '018',
@@ -114,5 +114,4 @@ const arrOfCard2 = createSlice({
     },
 })
 
-// export const {} = arrOfCard2.actions
 export default arrOfCard2.reducer

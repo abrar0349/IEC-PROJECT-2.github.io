@@ -7,6 +7,7 @@ function CheckForm() {
   let usrObj = useSelector( (obj) => obj.setUsrInAccount)
   let dispatch = useDispatch()
 
+  // let totalPrice;
   let totalPrice = usrObj.userCheckOut.reduce( (prev, newPrice) => {
     console.log(newPrice.productAmount)
     let totalPrice = parseFloat(newPrice.cardPrice) * Number(newPrice.productAmount)
@@ -39,7 +40,6 @@ function CheckForm() {
         setEmpty('Please Give Us Your Address')
       }else{
         setEmpty('')
-        // console.log('user bill information data sub',userBillDetails)
       }
   }
 
@@ -138,7 +138,7 @@ function CheckForm() {
             return(
                 <div className="price" key={id}>
                 <h4>{obj.cardName}</h4>
-                <h4>${obj.cardPrice}</h4>
+                <h4>${parseFloat(obj.cardPrice * obj.productAmount)}</h4>
                 <i class="fa-solid fa-trash" onClick={() => dispatch(userRemoverToCard(id))}></i>
                 </div>
             )

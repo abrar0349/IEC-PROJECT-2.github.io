@@ -2,11 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import './homesect.css'
 import Homesect1 from './Component/Homesect1';
 import Homesect2 from './Component/Homesect2';
-import Homesect2_1 from './Component/Homesect2_1';
+import Homesect2part1 from './Component/Homesect2part1';
 import EmailSubSect from '../Component/EmialSubSect';
-import { useSelector } from 'react-redux';
-// import FormSect from '../LoginSect/Component/FormSect';
-// import HomeSlider from './Component/HomeSlider';
 
 function HomeSect() {
   let liAsBtn1 = useRef()
@@ -14,15 +11,11 @@ function HomeSect() {
 
   let [component , setComponent] = useState(true)
 
-  let arr = useSelector((arr) => arr.userAccount)
-  // console.log(arr)
-
   useEffect(() => {
     let btn1 = liAsBtn1.current
     let btn2 = liAsBtn2.current
 
     let handle1 = (e) => {
-      // console.log(e.target)
       btn2.style.color = 'black'
       btn2.style.borderBottom = 'none'
       btn2.style.paddingBottom = '10px'
@@ -35,7 +28,6 @@ function HomeSect() {
     }
 
     let handle2 = (e) => {
-      // console.log(e.target)
       btn1.style.borderBottom = 'none'
       btn1.style.color = 'black'
       
@@ -66,7 +58,7 @@ function HomeSect() {
                 <li ref={liAsBtn2}>Hand Made Items</li>
               </ul>
              
-             {component ? <Homesect2 /> : <Homesect2_1/>} 
+             {component ? <Homesect2 /> : <Homesect2part1/>} 
         </div>
 
         <div className="Home-section3">

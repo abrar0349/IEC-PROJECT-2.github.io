@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-// import { userLogin } from '../../Slice/userSlice'
 import { userLoginInAccount } from '../../Slice/findUsrSlice'
 
 function LoginForm(props) {
@@ -12,6 +11,7 @@ function LoginForm(props) {
   let navigate = useNavigate()
   
   let usrAcountData = useSelector((arr) => arr.userAccount)
+
   let dispatch = useDispatch()
 
     let initialstate = {
@@ -23,25 +23,21 @@ function LoginForm(props) {
           if(form){
             SignUpRef.current.style.color = '#2D3A4B'
             LogInRef.current.style.color = 'gray'
-            // console.log('Its running in if condition')
           }else{
              SignUpRef.current.style.color = 'gray'
               LogInRef.current.style.color = '#2D3A4B'
-              // console.log("Running is else condition")
-               
           }
     })
         
     const [userData , setUserData] = useState(initialstate)
     const [empty , setEmpty] = useState('')
-      // const navigate = useNavigate()
   
       const openUsrAccount = (e) => {
         e.preventDefault()
 
           let findUsrAcount = usrAcountData.find( (obj) => {
-            return( (obj.userEmail === userData.userEmail ||obj.userName === userData.userEmail) && obj.userPassword === userData.userPassword)
-          })
+            return( (obj.userEmail === userData.userEmail || obj.userName === userData.userEmail) && obj.userPassword === userData.userPassword )
+          }) 
 
           if(findUsrAcount !== undefined){
         
@@ -56,7 +52,7 @@ function LoginForm(props) {
 
           }else{
 
-            setEmpty("In Valid UserName And Password")
+            setEmpty("In Valid UserName and Password")
           }
       }
 
@@ -72,21 +68,23 @@ function LoginForm(props) {
   <div className='login-container'>
 
     <div className="heading">
-    <h2>   <span ref = {LogInRef} onClick={() => setForm(true)}> Login  <span className='line'> / </span>  </span>   <span ref={SignUpRef} onClick={() => setForm(false)}>Register</span></h2>
+       <h2>   <span ref = {LogInRef} onClick={() => setForm(true)}> Login  <span className='line'> / </span>  </span>   <span ref={SignUpRef} onClick={() => setForm(false)}>Register</span></h2>
     </div>
 
     <form>
-    <label htmlFor="User"> UserName Or Email</label>
-    <input type="text" name = 'userName' onChange={handleChange}/>
-    <label htmlFor="password"> Password</label>
-    <input type="password" name = 'password' onChange={handleChange}/>
-    {empty.length <= 0 ? null :  <p className='loginpage-error'>{empty}</p>}
-    <div className='btn'>
-        <button onClick={openUsrAccount}>LOGIN</button>
-        <Link to ="#" >Forget Password</Link>
-        
-    </div>
+      <label htmlFor="User"> UserName Or Email</label>
+      <input type="text" name = 'userName' onChange={handleChange}/>
+      <label htmlFor="password"> Password</label>
+      <input type="password" name = 'password' onChange={handleChange}/>
+
+      {empty.length <= 0 ? null :  <p className='loginpage-error'>{empty}</p>}
+
+      <div className='btn'>
+          <button onClick={openUsrAccount}>LOGIN</button>
+          <Link to ="#" >Forget Password</Link>     
+      </div>
     </form>
+
   </div>
   )
 }

@@ -35,9 +35,7 @@ let usrFinded = createSlice({
                 // state.userCheckOut.filter( (obj) => {
                 //     console.log('outer else part of if',obj.cardId , action.payload.cardId)
                 let findobj = state.userCheckOut.find( (obj) => obj.cardId === action.payload.cardId)
-                // console.log('findob value', findobj)
                 if(!findobj){
-                    // console.log('inner if condition', action.payload.cardId)
                     state.userCheckOut.push(action.payload)
                     console.log(action.payload)
                 }
@@ -55,7 +53,6 @@ let usrFinded = createSlice({
            state.userCheckOut.forEach( (obj) => {
             if(obj.cardId === condition1){
                 obj.productAmount = count
-                // console.log(state)
             }
            })
             

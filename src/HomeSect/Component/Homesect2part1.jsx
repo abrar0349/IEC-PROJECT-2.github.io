@@ -1,11 +1,11 @@
 import React from 'react';
 import '../Css-files/homesect2.css'
-import CardForSect2 from '../Component/CartForSect2'
+import CardForSect2 from './CartForSect2'
 import { useSelector } from 'react-redux';
 
 
 
-function Homesect2_1() {
+function Homesect2part1() {
 
   let productCollectionData = useSelector((arr) => arr.Card2)
   return (
@@ -19,4 +19,4 @@ function Homesect2_1() {
   )
 }
 
-export default Homesect2_1
+export default Homesect2part1
