@@ -112,6 +112,7 @@
     .horizontal-nav{
         align-items: flex-start;
         justify-content: flex-end;
+        padding-top: 20px;
     }
     .horizontal-nav .nav-img{
         display: none;
