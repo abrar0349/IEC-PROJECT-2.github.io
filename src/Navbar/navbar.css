@@ -80,8 +80,11 @@
 
 @media (min-width:600px) and (max-width:900px){
     .horizontal-nav{
-        padding: 15% , 5% , 0 , 6%;
-        align-items: flex-start;
+        /* padding: 35% , 5% , 0 , 6%; */
+        align-items: flex-start; 
+        padding-block: 20px;
+        padding-left: 30px;
+        /* border: 2px solid rebeccapurple; */
     }
     .horizontal-nav .nav-list-items {
         height: 100vh;
@@ -112,7 +115,8 @@
     .horizontal-nav{
         align-items: flex-start;
         justify-content: flex-end;
-        padding-top: 20px;
+        padding-block: 20px;
+        /* border: 2px solid gray; */
     }
     .horizontal-nav .nav-img{
         display: none;
