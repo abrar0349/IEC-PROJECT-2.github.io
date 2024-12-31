@@ -8,19 +8,22 @@ function Navbar() {
     let userObj = useSelector((obj) => obj.setUsrInAccount)
     let dispatch = useDispatch()
     let navigate = useNavigate()
-// console.log('the navbar obj',userObj)
+
     const [iconBtn , setIconBtn] = useState(true)
 
     const userLoginFunctionality = (e) => {
         e.preventDefault()
         navigate('/login',{state: {isResgiester : false}})
+        changeIcon(true)
         
     }
+
     const userLogoutFunctionality = (e) => {
         e.preventDefault()
         dispatch(userLogoutAccount({
             ...userObj,
             isLogIn : false}))
+            changeIcon(true)
     }
 
     let navRef = useRef()
@@ -46,9 +49,24 @@ function Navbar() {
             <ul className='nav-list-items navbar-responsive' ref={navRef}>
 
                 <div className='items'>
-                <li><Link to="">Home</Link></li>
-                <li><Link to="/checkout">Check Out</Link></li>
-                <li><Link to="/login">Registeration</Link></li>
+                    <li
+                    onClick={(e) => {
+                        changeIcon(true)
+                    }}
+                    ><Link to="/">Home</Link></li>
+
+                    <li
+                    onClick={(e) => {
+                        changeIcon(true)
+                    }}
+                    ><Link to="/checkout">Check Out</Link></li>
+
+                    <li
+                    onClick={(e) => {
+                        changeIcon(true)
+                    }}
+                    ><Link to="/login">Registeration</Link></li>
+
                 </div>
 
                 <div className="nav-icons">
@@ -60,7 +78,7 @@ function Navbar() {
      
 
             { iconBtn ? <i className="fa-solid fa-bars navbar-close-btn" onClick={resNavbar} ref={btnRef}></i> :
-             <i class="fa-solid fa-x navbar-close-btn" onClick={changeIcon}></i>}
+             <i className="fa-solid fa-x navbar-close-btn" onClick={changeIcon}></i>}
 
     </div>
 

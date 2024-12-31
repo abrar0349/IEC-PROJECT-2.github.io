@@ -8,6 +8,7 @@
     z-index: 997;
     display: flex;
     justify-content: space-between;
+    /* margin-bottom: 50px; */
 }
 .horizontal-nav .navbar-close-btn{
     color: gray;
@@ -48,6 +49,9 @@
     color: #2D3A4B;
     font-size: 25px;
     font-weight: 800;
+}
+.nav-list-items{
+    padding-top: 20px;
 }
 .nav-list-items li{
     list-style: none;
